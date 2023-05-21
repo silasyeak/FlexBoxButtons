@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+
+        }
+        .column {
+            flex: 50%;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+        }
+        .button {
+            display: inline-block;
+            margin: 2px;
+            padding: 8px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            /* border: solid black 3px; */
+            cursor: pointer;
+            font-family: 'Monaco, Consolas, "Lucida Console", monospace';
+            background-color: lightcoral;
+        }
+        body {
+            transition: background-color 0.3s;
+        }
+
+        .bg-color-0 {
+            background-color: #2F3134;
+        }
+
+        .bg-color-1 {
+            background-color: rebeccapurple;
+        }
+
+        .bg-color-2 {
+            background-color: cyan;
+        }
+
+        .bg-color-3 {
+            background-color: #FF0000;
+        }
+
+        .bg-color-4 {
+            background-color: #00F0FF;
+        }
+
+        .bg-color-5 {
+            background-color: #00FF27;
+        }
+
+        .bg-color-6 {
+            background-color: #FF80FF;
+        }
+
+        .bg-color-7 {
+            background-color: #FF1493;
+        }
+
+        .bg-color-8 {
+            background-color: #FFA500;
+        }
+
+        .bg-color-9 {
+            background-color: #FF00FF;
+        }
+
+        .bg-color-10 {
+            background-color: #FFD700;
+        }
+
+
+        /* Add more background color classes as needed */
+    </style>
+</head>
+<body>
+    <div>
+        <div class="slider-container">
+            <input type="range" min="0" max="10" step="1" id="textSlider" value="0"/>
+        </div>
+        <h4>Welcome to my blog! I originally made this blog to explain things to myself and realized very quickly that this was the most accessible note-taking app I've ever had,
+            which also has a lot of personalization with JavaScript. <br>Bio: I'm a former amateur MMA fighter, software engineer, and now a blogger I suppose.
+            I just had one too many thoughts, so I figured I should just put them somewhere. 
+        </h4>
+
+        <hr>
+    </div>
+    <div class="button-container row">
+        <div class="column">
+            <button class="button anime" onclick="redirectTo('anime')">Anime</button>
+            <button class="button fighting" onclick="redirectTo('fighting')">Fighting</button>
+            <button class="button graphs" onclick="redirectTo('graphs')">Graphs</button>
+            <button class="button javascript" onclick="redirectTo('javascript')">JavaScript</button>
+            <button class="button programming" onclick="redirectTo('programming')">Programming</button>   
+            
+            <button class="button techReviews" onclick="redirectTo('techReviews')">Tech Reviews</button>
+        
+        </div>
+        <div class="button-container column">
+            <button class="button business" onclick="redirectTo('business')">Business</button>
+            <button class="button food" onclick="redirectTo('food')">Food</button>
+            <button class="button java" onclick="redirectTo('java')">Java</button>
+            <button class="button personal" onclick="redirectTo('personal')">Personal</button>   
+            <button class="button sideCharacters" onclick="redirectTo('sideCharacters')">Side Characters</button>
+            <button class="button tvShows" onclick="redirectTo('tvShows')">TV Shows</button>
+        </div>
+      </div>
+
+    
+
+    <div id="videoContainer"></div>
+
+    <script>
+        var slider = document.getElementById('textSlider');
+        var textElement = document.querySelector('h4');
+        var videoContainer = document.getElementById('videoContainer');
+        var buttons = document.getElementsByClassName('button');
+
+        function redirectTo(label) {
+            var baseURL = 'https://silasyeak.blogspot.com/search/label/';
+            var url = baseURL + label;
+            window.location.href = url;
+        }
+
+        // Add event listener to the slider
+        slider.addEventListener('input', function () {
+            // Check the slider value
+            switch (parseInt(slider.value)) {
+                case 0:
+                    document.body.className = 'bg-color-0';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = '#FF0000';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Comic Sans MS';
+                    break;
+                case 1:
+                    document.body.className = 'bg-color-1';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'orange';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Verdana, Geneva, sans-serif';
+                    break;
+                case 2:
+                    document.body.className = 'bg-color-2';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'yellow';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Tahoma, Geneva, sans-serif';
+                    break;
+                case 3:
+                    document.body.className = 'bg-color-3';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'green';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Tahoma, Geneva, sans-serif';
+                    break;
+                case 4:
+                    document.body.className = 'bg-color-4';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'blue';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif';
+                    break;
+                case 5:
+                    document.body.className = 'bg-color-5';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'indigo';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Monaco, Consolas, "Lucida Console", monospace';
+                    break;
+                case 6:
+                    document.body.className = 'bg-color-6';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'violet';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = '"Times New Roman", Times, serif';
+                    break;
+                case 7:
+                    document.body.className = 'bg-color-7';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'white';
+                        buttons[i].style.color = 'black';
+                    }
+                    document.body.style.fontFamily = 'Garamond, serif';
+                    break;
+                case 8:
+                    document.body.className = 'bg-color-8';
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'black';
+                        buttons[i].style.color = 'white';
+                    }
+                    document.body.style.fontFamily = 'Rockwell, serif';
+                    break;
+            case 9:
+                document.body.className = 'bg-color-9';
+                for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'blue';
+                        buttons[i].style.color = 'white';
+                    }
+                break;
+            case 10:
+                document.body.className = 'bg-color-10';
+                for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.backgroundColor = 'red';
+                        buttons[i].style.color = 'white';
+                    }
+                videoContainer.innerHTML = '<iframe width="280" height="190" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                break;
+            default:
+                document.body.className = '';
+        }
+    });
+</script>
+
+</!doctype>
